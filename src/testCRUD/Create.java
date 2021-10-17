@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Create {
+
     static Scanner inputCommand = new Scanner(System.in);
     public static String currentFileName;
 
