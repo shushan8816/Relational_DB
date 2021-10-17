@@ -11,7 +11,8 @@ public class User {
     public User() {
     }
 
-    public User( String name, String email, String phone, String country, int age) {
+    public User(int ID, String name, String email, String phone, String country, int age) {
+        this.ID = ID;
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -66,13 +67,11 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
-
     public String getUserInfo() {
-        return String.format("user %d {ID: %d', Name: %s, Email: %s, Phone: %s, Country: %s, Age: %d}",
-                getID(), getID(), getName(), getEmail(), getPhone(), getCountry(), getAge());
-
+        return String.format("user {ID: %d, Name: %s, Email: %s, Phone: %s, Country: %s, Age: %d}",
+                getID(), getName(), getEmail(), getPhone(), getCountry(), getAge());
     }
-  @Override
+    @Override
     public String toString() {
         return "ID='" + ID + '\'' +
                 ", name='" + name + '\'' +
