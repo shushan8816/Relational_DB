@@ -1,0 +1,3 @@
+user {ID: 1, Name: Artur, Email: AnH@gmail.com, Phone: 2544684, Country: Armenia, Age: 25}
+user {ID: 2, Name: Angel, Email: aksi@inbox.ru, Phone: 548656566, Country: Uk, Age: 30}
+user {ID: 3, Name: Mike, Email: jfh@gmail.com, Phone: 354653, Country: Canada, Age: 36}
