@@ -1,6 +1,6 @@
 package services;
 
-import testCRUD.*;
+import test.*;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package testCRUD;
+package test;
 
 import services.FileService;
 import services.MenuService;
