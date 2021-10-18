@@ -16,22 +16,7 @@ public class FileService {
 
         File db = new File(filePath + File.separator + name + ".txt");
         return db.createNewFile();
-        
-    }
 
-    public static void createFile(String name) {
-        try {
-            File db = new File(filePath + File.separator + name + ".txt");
-
-            if (db.createNewFile()) {
-                System.out.println("File created: " + db.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
     }
 
     public static boolean isFileExist(String fileName) {
@@ -41,7 +26,8 @@ public class FileService {
 
     public static void write(String fileName, String content) {
         try {
-            Files.write(Paths.get(filePath + fileName + ".txt"), content.getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(filePath + fileName + ".txt")
+                    , content.getBytes(), StandardOpenOption.APPEND);
             System.out.println("User successfully added!");
         } catch (IOException e) {
             System.out.println("Enter correct file name");
@@ -51,7 +37,8 @@ public class FileService {
     public static List<String> read(String fileName) {
         List<String> fileData = null;
         try {
-            fileData = Files.readAllLines(Paths.get(filePath + fileName + ".txt"), StandardCharsets.UTF_8);
+            fileData = Files.readAllLines(Paths.get(filePath + fileName + ".txt")
+                    , StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Exception while reading data from file");
@@ -62,7 +49,8 @@ public class FileService {
     public static List<String> readFileAsLines(String fileName) {
         List<String> lines = null;
         try {
-            lines = Files.lines(Paths.get(filePath + fileName + ".txt")).collect(Collectors.toList());
+            lines = Files.lines(Paths.get(filePath + fileName + ".txt"))
+                    .collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -71,7 +59,9 @@ public class FileService {
 
     public static void removeAndWrite(String fileName, List<String> content) {
         try {
-            Files.write(Paths.get("src\\DB\\" + fileName + ".txt"), content, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+            Files.write(Paths.get(filePath + fileName + ".txt")
+                    , content, StandardOpenOption.WRITE
+                    , StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
             e.printStackTrace();
         }
